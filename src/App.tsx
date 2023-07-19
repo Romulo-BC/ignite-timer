@@ -4,12 +4,15 @@ import { Router } from './Router'
 
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
+import { CyclesConstextProvider } from './contexts/CyclesContext'
 
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
-        <Router />
+        <CyclesConstextProvider>
+          <Router />
+        </CyclesConstextProvider>
       </BrowserRouter>
 
       <GlobalStyle />
